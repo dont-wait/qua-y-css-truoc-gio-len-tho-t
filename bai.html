@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Đầy Đủ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header (3 điểm) */
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Thanh điều hướng (2 điểm) */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        
+        /* Bố cục chung (1 điểm) */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+        
+        main {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        aside {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Bảng (phần của nội dung 1 điểm) */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        /* Form mẫu */
+        form {
+            margin-top: 2rem;
+            display: grid;
+            gap: 1rem;
+        }
+        
+        label {
+            font-weight: bold;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        button {
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #1c60c4;
+        }
+        
+        /* Phần hình ảnh */
+        .banner-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Video/Audio (phần của nội dung 1 điểm) */
+        .media-container {
+            margin: 2rem 0;
+        }
+        
+        video, audio {
+            width: 100%;
+            border-radius: 4px;
+        }
+        
+        /* Iframe nhúng */
+        .embed-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%; /* Tỷ lệ 16:9 */
+            margin: 2rem 0;
+        }
+        
+        .embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        /* Footer với liên kết (1 điểm) */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #2575fc;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #2575fc;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+            border-bottom: 2px solid #2575fc;
+            padding-bottom: 0.5rem;
+        }
+        
+        .sidebar-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            border-bottom: 2px solid #2575fc;
+            padding-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (3 điểm) -->
+    <header>
+        <h1>Trang Web Mẫu</h1>
+        <p>Trang web với đầy đủ các yêu cầu</p>
+    </header>
+    
+    <!-- Thanh điều hướng (Phần của 2 điểm) -->
+    <nav>
+        <ul>
+            <li><a href="#trang-chu">Trang chủ</a></li>
+            <li><a href="#gioi-thieu">Giới thiệu</a></li>
+            <li><a href="#dich-vu">Dịch vụ</a></li>
+            <li><a href="#san-pham">Sản phẩm</a></li>
+            <li><a href="#lien-he">Liên hệ</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Hình ảnh banner (Phần của 2 điểm) -->
+    <div class="container">
+        <main>
+            <img class="banner-image" src="/api/placeholder/1200/300" alt="Banner hình ảnh" />
+            
+            <h2 class="section-title">Thông tin chính</h2>
+            <p>Đây là trang web mẫu được tạo theo yêu cầu. Trang web này bao gồm đầy đủ các thành phần: header, thanh điều hướng, hình ảnh, nội dung với bảng dữ liệu, phần tử đa phương tiện, nhúng nội dung từ trang khác và biểu mẫu.</p>
+            
+            <!-- Bảng (Phần của 1 điểm nội dung) -->
+            <h2 class="section-title">Bảng dữ liệu</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Mô tả</th>
+                        <th>Giá</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Sản phẩm A</td>
+                        <td>Mô tả chi tiết về sản phẩm A</td>
+                        <td>100.000đ</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Sản phẩm B</td>
+                        <td>Mô tả chi tiết về sản phẩm B</td>
+                        <td>150.000đ</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Sản phẩm C</td>
+                        <td>Mô tả chi tiết về sản phẩm C</td>
+                        <td>200.000đ</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Sản phẩm D</td>
+                        <td>Mô tả chi tiết về sản phẩm D</td>
+                        <td>250.000đ</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- Video và âm thanh (Phần của 1 điểm nội dung) -->
+            <h2 class="section-title">Video và Âm thanh</h2>
+            <div class="media-container">
+                <h3>Video mẫu</h3>
+                <video controls>
+                    <source src="#" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ thẻ video.
+                </video>
+            </div>
+            
+            <div class="media-container">
+                <h3>Âm thanh mẫu</h3>
+                <audio controls>
+                    <source src="#" type="audio/mpeg">
+                    Trình duyệt của bạn không hỗ trợ thẻ audio.
+                </audio>
+            </div>
+            
+            <!-- Nhúng trang từ bên ngoài -->
+            <h2 class="section-title">Nội dung nhúng từ trang khác</h2>
+            <div class="embed-container">
+                <iframe src="https://www.example.com" title="Trang web nhúng"></iframe>
+            </div>
+            
+            <!-- Form mẫu -->
+            <h2 class="section-title">Biểu mẫu liên hệ</h2>
+            <form id="contact-form">
+                <div>
+                    <label for="name">Họ và tên:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div>
+                    <label for="phone">Số điện thoại:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div>
+                    <label for="subject">Chủ đề:</label>
+                    <select id="subject" name="subject">
+                        <option value="thong-tin">Thông tin sản phẩm</option>
+                        <option value="ho-tro">Hỗ trợ kỹ thuật</option>
+                        <option value="bao-gia">Báo giá</option>
+                        <option value="khac">Khác</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="message">Nội dung:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit">Gửi liên hệ</button>
+            </form>
+        </main>
+        
+        <aside>
+            <h3 class="sidebar-title">Tin tức mới nhất</h3>
+            <ul>
+                <li><a href="#">Tin tức 1</a></li>
+                <li><a href="#">Tin tức 2</a></li>
+                <li><a href="#">Tin tức 3</a></li>
+                <li><a href="#">Tin tức 4</a></li>
+                <li><a href="#">Tin tức 5</a></li>
+            </ul>
+            
+            <h3 class="sidebar-title">Danh mục</h3>
+            <ul>
+                <li><a href="#">Danh mục 1</a></li>
+                <li><a href="#">Danh mục 2</a></li>
+                <li><a href="#">Danh mục 3</a></li>
+                <li><a href="#">Danh mục 4</a></li>
+            </ul>
+            
+            <h3 class="sidebar-title">Kết nối với chúng tôi</h3>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook">FB</a>
+                <a href="#" aria-label="Twitter">TW</a>
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="LinkedIn">LI</a>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- Footer với liên kết (1 điểm) -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Về chúng tôi</a>
+            <a href="#">Chính sách bảo mật</a>
+            <a href="#">Điều khoản sử dụng</a>
+            <a href="#">Liên hệ</a>
+        </div>
+        
+        <p>&copy; 2025 Trang Web Mẫu. Tất cả các quyền được bảo lưu.</p>
+        
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook">FB</a>
+            <a href="#" aria-label="Twitter">TW</a>
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="LinkedIn">LI</a>
+        </div>
+    </footer>
+</body>
+</html>

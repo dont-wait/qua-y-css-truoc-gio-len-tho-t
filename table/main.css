@@ -3,3 +3,32 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+html {
+    color-scheme: dark;
+    font-size: 1.125rem;
+    font-family: system-ui;
+    line-height: 1.5;
+}
+.wrapper {
+    width: min(900px, 100% - 3rem);
+    margin-inline: auto;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: #323232;
+}
+caption,
+th, td {
+    padding: 1rem;
+    text-align: left;
+}
+caption {
+    background: hsl(0, 0%, 0%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
